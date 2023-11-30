@@ -1,19 +1,16 @@
-// Need: Event Listener for the form button
-//       Function to execute when called in event listener
-//       Function, mentioned above, that opens a new window with meal plan
-//       Form validation - proper email
-document.getElementById("mpButton").addEventListener("click", mealPlan);
+// This is the event listener and function for the meal plan button
+document.getElementById("mpButton").addEventListener("click", mealPlan); // Event listener for the "Create Meal Plan" button
 
-function mealPlan() {
+function mealPlan() { // Validates email and creates meal plan when meal plan button is clicked
     // Variables from user input
     clientName = document.getElementById("name").value;
     clientEmail = document.getElementById("email").value;
     clientGoal = document.querySelector("#goals").value;
 
     // Validation loop
-    // The regular expression below does not work with validation as intended (written 11-27-23)
-    emailRegEx = /^[a-zA-Z0-9._%+-] + @[a-zA-Z0-9.-] + \.[a-zA-Z]{2,}$/; // This regular expression was written using the help of ChatGPT
-    if (clientEmail !== emailRegEx) {
+    emailRegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // This regular expression was written using the help of ChatGPT
+    if (!emailRegEx.test(clientEmail)) { // This method tests whether a string fits within the outline of the regular expression
+                                         // The if condition is if the string being tested does NOT match the regular expression
         window.alert("Must provide a valid email.");
     } else {
         myText = ("<html>\n<head>\n<title>Meal Plan</title>\n</head>\n<body>\n");
@@ -25,3 +22,18 @@ function mealPlan() {
         flyWindow.document.write(myText);
     }
 }
+// This is the event listener and function for the clear button
+document.getElementById("clearButton").addEventListener("click", clearForm);
+
+function clearForm() {
+    clientName = document.getElementById("name");
+    clientEmail = document.getElementById("email");
+    clientGoal = document.querySelector("#goals");
+
+    clientName.value = "";
+    clientEmail.value = "";
+    clientGoal.value = "";
+}
+// This is the event listener and function for the print button - Put this on the popup window with the meal plan
+
+// This is the event listener and function for the download button - Put this on the popup window with the meal plan

@@ -2,7 +2,12 @@
 <html>
     <head>
         <title>WEB-115 Final Project</title>
-        <script src="projectJS.js" defer></script>
+        <!--The CSS below adds space between the buttons at the bottom of the form-->
+        <style>
+            .button-container button {
+                margin-right: 10px;
+            }
+        </style>
     </head>
     <body>
         <h1>Perfectly Portioned Fitness</h1>
@@ -17,11 +22,18 @@
                 <input type="text" id="email" name="email"><br><br>
                 <label for="goals">Nutritional Goal:</label><br>
                 <input list="goals">
+                <!--Change this to be a radio button for ease of clear button (written 11-29-23)-->
                 <datalist id="goals">
                     <option value="Lose body fat"></option>
                     <option value="Gain muscle mass"></option>
                 </datalist><br><br>
-                <button type="button" id="mpButton">Create Meal Plan</button>
+                <div class="button-container">
+                    <button type="button" id="mpButton">Create Meal Plan</button>
+                    <button type="button" id="clearButton">Clear</button>
+                    <button type="button" id="printButton">Print</button>
+                    <button type="button" id="downloadButton">Download</button>
+                </div>
+                <script src="projectJS.js"></script>
             </fieldset>
         </form>
     </body>
