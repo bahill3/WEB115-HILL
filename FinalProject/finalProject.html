@@ -7,12 +7,15 @@
             .button-container button {
                 margin-right: 10px;
             }
+            .banner {
+                display: block;
+                margin: auto;
+                width: 50%;
+            }
         </style>
     </head>
     <body>
-        <h1>Perfectly Portioned Fitness</h1>
-        <p>Welcome to Perfectly Portioned Fitness! We're here to help you meet your nutritional goals through meal planning.</p>
-        <p>To get started with your meal plan, please fill out the form below.</p><br>
+        <img src="WEB115_Banner.png" alt="Welcome-Banner" class="banner">
         <form>
             <fieldset>
                 <legend>Meal Plan Form:</legend>
@@ -21,17 +24,13 @@
                 <label for="email">Email:</label><br>
                 <input type="text" id="email" name="email"><br><br>
                 <label for="goals">Nutritional Goal:</label><br>
-                <input list="goals">
-                <!--Change this to be a radio button for ease of clear button (written 11-29-23)-->
-                <datalist id="goals">
-                    <option value="Lose body fat"></option>
-                    <option value="Gain muscle mass"></option>
-                </datalist><br><br>
+                <input type="radio" id="lose-fat" name="meal_plan" value="Lose Body Fat">
+                <label for="lose-fat">Lose Body Fat</label><br>
+                <input type="radio" id="gain-muscle" name="meal_plan" value="Gain Muscle Mass">
+                <label for="gain-muscle">Gain Muscle Mass</label><br><br>
                 <div class="button-container">
                     <button type="button" id="mpButton">Create Meal Plan</button>
-                    <button type="button" id="clearButton">Clear</button>
-                    <button type="button" id="printButton">Print</button>
-                    <button type="button" id="downloadButton">Download</button>
+                    <button type="button" id="clButton">Clear</button>
                 </div>
                 <script src="projectJS.js"></script>
             </fieldset>
